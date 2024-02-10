@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  margin: 50px auto;
+}
+h1,
+h2 {
+  text-align: center;
+}
+
+img {
+  top: 25%;
+  left: 12%;
+  width: 18%;
+  position: absolute;
+}
+
+.cell {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+  border-right: 2px solid black;
+  border-bottom: solid black;
+  cursor: pointer;
+}
+.cell:nth-child(3n) {
+  border-right: none;
+}
+.cell:nth-child(6) ~ .cell {
+  border-bottom: none;
+}
+
+.board {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 80px auto;
+}
+
+.white {
+  color: white;
+  text-transform: uppercase;
+  text-shadow: -2px 1px 3px black;
+}
+
+#gameEnd {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("image/bgfin.png");
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  object-fit: contain;
+}
+
+#gameEnd p,
+#gameEnd input {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 10px 20px;
+  border-radius: 11px;
+  transform: translate(-45%, -45%);
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+#gameEnd input:hover {
+  color: white;
+  background: #89a02c;
+}
+
+#gameEnd p {
+  margin-top: 4rem;
+  font-size: 30px;
+  color: #f5ffb4;
+}

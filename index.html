@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Morpion</title>
+  </head>
+  <body>
+    <h1>Jeu du Mort Pion!</h1>
+    <img src="image/bg.png" alt="" />
+    <div id="gameEnd">
+      <p class="white" id="endGameStatus">...</p>
+      <input
+        type="submit"
+        value="Recommencer"
+        id="reloadGame"
+        onclick="reloadGame()"
+      />
+    </div>
+
+    <div class="board">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
+
+    <h2 id="gameStatus">Le joueur 1 commence!</h2>
+    <script src="main.js"></script>
+  </body>
+</html>
