@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fruktur&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +9,22 @@
 body {
   font-family: monospace;
   margin: 50px auto;
+  background: url("image/ai-generated-8334800_1280.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 h1,
 h2 {
   text-align: center;
+  color: white;
+  font-family: "Fruktur", system-ui;
+  font-size: 30px;
 }
 
 img {
   top: 25%;
-  left: 20%;
+  left: 13%;
   width: 18%;
   position: absolute;
 }
@@ -43,6 +52,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   margin: 80px auto;
+  background-color: white;
 }
 
 .white {
@@ -61,7 +71,7 @@ img {
   bottom: 0;
   left: 0;
   background: url("image/bgfin.png");
-  background-color: white;
+  background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -90,6 +100,7 @@ img {
   margin-top: 5rem;
   font-size: 30px;
   color: #f5ffb4;
+  font-family: "Fruktur", system-ui;
 }
 
 @media (max-width: 773px) {
