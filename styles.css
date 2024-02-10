@@ -91,3 +91,11 @@ img {
   font-size: 30px;
   color: #f5ffb4;
 }
+
+@media (max-width: 773px) {
+  img {
+    top: 14%;
+    left: 45%;
+    width: 62px;
+  }
+}
