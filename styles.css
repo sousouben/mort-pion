@@ -87,7 +87,7 @@ img {
 }
 
 #gameEnd p {
-  margin-top: 4rem;
+  margin-top: 5rem;
   font-size: 30px;
   color: #f5ffb4;
 }
@@ -97,5 +97,8 @@ img {
     top: 14%;
     left: 45%;
     width: 62px;
+  }
+  #gameEnd p {
+    font-size: 23px;
   }
 }
