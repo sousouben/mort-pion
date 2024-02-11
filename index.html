@@ -7,11 +7,12 @@
     <title>Morpion</title>
   </head>
   <body>
-    <audio autoplay>
+    <audio id="backgroundMusic" loop>
       <source
         src="musique/mysterious-forest-creepy-lofi-halloween-lofi-halloween-music-168238.mp3"
         type="audio/mpeg"
       />
+      Votre navigateur ne supporte pas l'élément audio.
     </audio>
 
     <h1>Jeu du Mort Pion!</h1>
@@ -40,6 +41,11 @@
     </div>
 
     <h2 id="gameStatus">Le joueur 1 commence!</h2>
+
+    <div id="scores">
+      <p>Score Joueur 1 : <span id="scorePlayerOne">0</span></p>
+      <p>Score Joueur 2 : <span id="scorePlayerTwo">0</span></p>
+    </div>
 
     <script src="main.js"></script>
   </body>

@@ -1,9 +1,13 @@
 const cells = document.querySelectorAll("[data-cell]");
 const gameStatus = document.getElementById("gameStatus");
 const endGameStatus = document.getElementById("endGameStatus");
+const scorePlayerOneElement = document.getElementById("scorePlayerOne");
+const scorePlayerTwoElement = document.getElementById("scorePlayerTwo");
 const playerOne = "X";
 const playerTwo = "O";
 let playerTurn = playerOne;
+let scorePlayerOne = parseInt(localStorage.getItem("scorePlayerOne")) || 0;
+let scorePlayerTwo = parseInt(localStorage.getItem("scorePlayerTwo")) || 0;
 const winningPatterns = [
   [0, 1, 2],
   [3, 4, 5],
@@ -15,6 +19,19 @@ const winningPatterns = [
   [2, 4, 6],
 ];
 
+document.addEventListener("DOMContentLoaded", function () {
+  var backgroundMusic = document.getElementById("backgroundMusic");
+
+  // Lecture automatique après une petite interaction utilisateur
+  document.addEventListener("click", function () {
+    backgroundMusic.play();
+    // Retirez l'écouteur d'événement après la première interaction
+    document.removeEventListener("click", arguments.callee);
+  });
+
+  updateScoreDisplay();
+});
+
 cells.forEach((cell) => {
   cell.addEventListener("click", playGame, { once: true });
 });
@@ -24,7 +41,35 @@ function playGame(e) {
   e.target.innerHTML = playerTurn;
 
   if (checkWin(playerTurn)) {
+    if (playerTurn === playerOne) {
+      scorePlayerOne++;
+      if (scorePlayerOne === 10) {
+        endGameStatus.innerHTML = "Le joueur 1 a gagné le match!";
+        endGame();
+        localStorage.removeItem("scorePlayerOne");
+        localStorage.removeItem("scorePlayerTwo");
+        scorePlayerOne = 0;
+        scorePlayerTwo = 0;
+        updateScoreDisplay();
+        return;
+      }
+    } else {
+      scorePlayerTwo++;
+      if (scorePlayerTwo === 10) {
+        endGameStatus.innerHTML = "Le joueur 2 a gagné le match!";
+        endGame();
+        localStorage.removeItem("scorePlayerOne");
+        localStorage.removeItem("scorePlayerTwo");
+        scorePlayerOne = 0;
+        scorePlayerTwo = 0;
+        updateScoreDisplay();
+        return;
+      }
+    }
+    localStorage.setItem("scorePlayerOne", scorePlayerOne);
+    localStorage.setItem("scorePlayerTwo", scorePlayerTwo);
     updateGameStatus("wins" + playerTurn);
+    updateScoreDisplay();
     return endGame();
   } else if (checkDraw()) {
     updateGameStatus("draw");
@@ -36,8 +81,8 @@ function playGame(e) {
 }
 
 function checkWin(playerTurn) {
-  return winningPatterns.some((combinaison) => {
-    return combinaison.every((index) => {
+  return winningPatterns.some((combination) => {
+    return combination.every((index) => {
       return cells[index].innerHTML == playerTurn;
     });
   });
@@ -80,4 +125,9 @@ function endGame() {
 
 function reloadGame() {
   window.location.reload();
+}
+
+function updateScoreDisplay() {
+  scorePlayerOneElement.textContent = scorePlayerOne;
+  scorePlayerTwoElement.textContent = scorePlayerTwo;
 }
