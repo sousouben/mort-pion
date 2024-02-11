@@ -8,53 +8,58 @@
       name="description"
       content="Jouez au Morpion en ligne, un jeu amusant où deux joueurs s'affrontent pour aligner trois symboles en ligne sur une grille. Défiez vos amis et améliorez vos compétences pour devenir le champion du Morpion!"
     />
-
     <link rel="stylesheet" href="styles.css" />
     <title>
       Jeu du Morpion en ligne - Défiez vos amis et améliorez vos compétences
     </title>
   </head>
   <body>
-    <audio id="backgroundMusic" loop>
-      <source
-        src="musique/mysterious-forest-creepy-lofi-halloween-lofi-halloween-music-168238.mp3"
-        type="audio/mpeg"
-      />
-      Votre navigateur ne supporte pas l'élément audio.
-    </audio>
+    <header>
+      <h1>Jeu du Morpion</h1>
+    </header>
 
-    <h1>Jeu du Mort Pion!</h1>
-    <img src="image/bg.png" alt="Image de fond du jeu de Morpion" />
+    <main>
+      <img src="image/bg.png" alt="Image de fond du jeu de Morpion" />
 
-    <div id="gameEnd">
-      <p class="white" id="endGameStatus">...</p>
-      <input
-        type="submit"
-        value="Recommencer"
-        id="reloadGame"
-        onclick="reloadGame()"
-      />
-    </div>
+      <div id="gameEnd">
+        <p class="white" id="endGameStatus">...</p>
+        <input
+          type="submit"
+          value="Recommencer"
+          id="reloadGame"
+          onclick="reloadGame()"
+        />
+      </div>
 
-    <div class="board">
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-    </div>
+      <div class="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+      </div>
 
-    <h2 id="gameStatus">Le joueur 1 commence!</h2>
+      <h2 id="gameStatus">Le joueur 1 commence!</h2>
 
-    <div id="scores">
-      <p>Score Joueur 1 : <span id="scorePlayerOne">0</span> / 10</p>
-      <p>Score Joueur 2 : <span id="scorePlayerTwo">0</span> / 10</p>
-    </div>
+      <div id="scores">
+        <p>Score Joueur 1 : <span id="scorePlayerOne">0</span> / 10</p>
+        <p>Score Joueur 2 : <span id="scorePlayerTwo">0</span> / 10</p>
+      </div>
+    </main>
 
-    <script src="main.js"></script>
+    <footer>
+      <audio id="backgroundMusic" loop>
+        <source
+          src="musique/mysterious-forest-creepy-lofi-halloween-lofi-halloween-music-168238.mp3"
+          type="audio/mpeg"
+        />
+        Votre navigateur ne supporte pas l'élément audio.
+      </audio>
+      <script src="main.js" defer></script>
+    </footer>
   </body>
 </html>
