@@ -108,17 +108,9 @@ img {
 
 @media (max-width: 773px) {
   img {
-    top: 77%;
-    left: 21%;
-    width: 62px;
+    display: none;
   }
   #gameEnd p {
     font-size: 23px;
-  }
-}
-
-@media (max-width: 740px) {
-  img {
-    left: 0;
   }
 }
