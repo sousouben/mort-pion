@@ -18,7 +18,7 @@ const winningPatterns = [
   [0, 4, 8],
   [2, 4, 6],
 ];
-
+//musique qui fait peur
 document.addEventListener("DOMContentLoaded", function () {
   var backgroundMusic = document.getElementById("backgroundMusic");
 
